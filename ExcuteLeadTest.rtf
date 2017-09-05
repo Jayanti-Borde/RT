@@ -1,0 +1,228 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.10240}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9 package Testscript;\par
+import java.io.FileInputStream;\par
+import java.util.ArrayList;\par
+import java.util.Iterator;\par
+import org.apache.poi.ss.usermodel.Cell;\par
+import org.apache.poi.ss.usermodel.Row;\par
+import org.apache.poi.xssf.usermodel.XSSFSheet;\par
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;\par
+import org.junit.Test;\par
+import org.testng.Assert;\par
+public class EXLeadTest \{\par
+\tab @Test\par
+public void LeadTest()throws Exception\{\par
+\tab  ArrayList<String> a;\par
+\tab  Keyword1 key;\par
+\tab\tab\tab a=new ArrayList();\par
+\tab\tab\tab key=new Keyword1();\par
+\tab\tab\tab // TODO Auto-generated method stub\par
+\tab FileInputStream file=new FileInputStream("F:\\\\NewRTcamp.xlsx");\par
+\tab XSSFWorkbook wbks=new XSSFWorkbook(file);\par
+\tab XSSFSheet s=wbks.getSheet("Sheet1");\par
+\tab Iterator itr=s.iterator();\par
+\tab while(itr.hasNext())\{\par
+\tab\tab Row rowitr=(Row)itr.next();\par
+\tab\tab Iterator cellitr=rowitr.cellIterator();\par
+\tab\tab while(cellitr.hasNext())\{\par
+\tab\tab\tab Cell celldata=(Cell)cellitr.next();\par
+\tab\tab\tab switch(celldata.getCellType())\{\par
+\tab\tab\tab case Cell.CELL_TYPE_STRING:\par
+\tab\tab\tab\tab a.add(celldata.getStringCellValue());\par
+\tab\tab\tab\tab break;\par
+\tab\tab\tab\tab\par
+\tab\tab\tab\}\par
+\tab\tab\tab\par
+\tab\tab\}\par
+\tab\}\par
+/*\tab for(int i=0;i<a.size();i++)\{\par
+\tab\tab if(a.get(i).equals("verifytitle"))\{\par
+\tab\tab\tab\par
+\tab\tab\tab String keyword=(String)a.get(i);\par
+\tab\tab\tab String data=(String)a.get(i+1);\par
+\tab\tab\tab String objectname=(String)a.get(i+2);\par
+\tab\tab\tab String runmode=(String)a.get(i+3);\par
+\tab\tab\tab System.out.println(keyword);\par
+\tab\tab\tab System.out.println(data);\par
+\tab\tab\tab System.out.println(objectname);\par
+\tab\tab\tab System.out.println(runmode);\par
+\tab\tab\tab System.out.println();\par
+\tab\tab\tab key.openbrowser();\par
+\tab\tab //\tab key.verifytitle();\par
+\tab\tab\}\par
+\tab\}*/\par
+\tab for(int i=0;i<a.size();i++)\{\par
+\tab\tab if(a.get(i).equals("verifytitle"))\{\par
+\tab\tab\tab\par
+\tab\tab\tab String keyword=(String)a.get(i);\par
+\tab\tab\tab String data=(String)a.get(i+1);\par
+\tab\tab\tab String objectname=(String)a.get(i+2);\par
+\tab\tab\tab String runmode=(String)a.get(i+3);\par
+\tab\tab\tab System.out.println(keyword);\par
+\tab\tab\tab System.out.println(data);\par
+\tab\tab\tab System.out.println(objectname);\par
+\tab\tab\tab System.out.println(runmode);\par
+\tab\tab\tab\par
+\tab\tab\tab String av=key.verifytitle();\par
+\tab\tab\tab\par
+\tab Assert.assertEquals(av, data);\par
+\tab\tab\tab\par
+\tab\tab\}\par
+\tab\}\par
+\par
+\par
+\tab for(int i=0;i<a.size();i++)\{\par
+\tab\tab if(a.get(i).equals("enterusername"))\{\par
+\tab\tab\tab String keyword=(String)a.get(i);\par
+\tab\tab\tab String data=(String)a.get(i+1);\par
+\par
+\tab\tab\tab String objectname=(String)a.get(i+2);\par
+\par
+\tab\tab\tab String runmode=(String)a.get(i+3);\par
+\tab\tab\tab System.out.println(keyword);\par
+\tab\tab\tab System.out.println(data);\par
+\tab\tab\tab System.out.println(objectname);\par
+\tab\tab\tab System.out.println(runmode);\par
+\tab key.enterusername(data,objectname);\par
+\tab\tab\tab //Assert.assertEquals(av, data);\par
+\tab\tab\tab //Assert.assertEquals(av, data);\par
+\tab\tab\}\par
+\tab\}\par
+\tab for(int i=0;i<a.size();i++)\{\par
+\tab\tab if(a.get(i).equals("enterpassword"))\{\par
+\tab\tab\tab String keyword=(String)a.get(i);\par
+\tab\tab\tab String data=(String)a.get(i+1);\par
+\par
+\tab\tab\tab String objectname=(String)a.get(i+2);\par
+\par
+\tab\tab\tab String runmode=(String)a.get(i+3);\par
+\tab\tab\tab System.out.println(keyword);\par
+\tab\tab\tab System.out.println(data);\par
+\tab\tab\tab System.out.println(objectname);\par
+\tab\tab\tab System.out.println(runmode);\par
+\tab\tab key. enterpassword(data,objectname);\par
+\tab\tab\tab\}\par
+\tab\tab\}\par
+\tab for(int i=0;i<a.size();i++)\{\par
+\tab\tab if(a.get(i).equals("clickonlogin"))\{\par
+\tab\tab\tab String keyword=(String)a.get(i);\par
+\tab\tab\tab String data=(String)a.get(i+1);\par
+\par
+\tab\tab\tab String objectname=(String)a.get(i+2);\par
+\par
+\tab\tab\tab String runmode=(String)a.get(i+3);\par
+\tab\tab\tab System.out.println(keyword);\par
+\tab\tab\tab System.out.println(data);\par
+\tab\tab\tab System.out.println(objectname);\par
+\tab\tab\tab System.out.println(runmode);\par
+\tab\tab key.clickonlogin(objectname);\par
+\tab\tab\tab\}\par
+\tab\tab\}\par
+\tab for(int i=0;i<a.size();i++)\{\par
+\tab\tab if(a.get(i).equals("clickonlogout"))\{\par
+\tab\tab\tab String keyword=(String)a.get(i);\par
+\tab\tab\tab String data=(String)a.get(i+1);\par
+\par
+\tab\tab\tab String objectname=(String)a.get(i+2);\par
+\par
+\tab\tab\tab String runmode=(String)a.get(i+3);\par
+\tab\tab\tab System.out.println(keyword);\par
+\tab\tab\tab System.out.println(data);\par
+\tab\tab\tab System.out.println(objectname);\par
+\tab\tab\tab System.out.println(runmode);\par
+\tab\tab key.clickonlogout(objectname);\par
+\tab\tab\tab\}\par
+\tab\}\par
+\tab\tab //login with invalid data username and password\par
+\tab\tab for(int i=0;i<a.size();i++)\{\par
+\tab\tab\tab if(a.get(i).equals("invalidusername"))\{\par
+\tab\tab\tab\tab String keyword=(String)a.get(i);\par
+\tab\tab\tab\tab String data=(String)a.get(i+1);\par
+\par
+\tab\tab\tab\tab String objectname=(String)a.get(i+2);\par
+\par
+\tab\tab\tab\tab String runmode=(String)a.get(i+3);\par
+\tab\tab\tab\tab System.out.println(keyword);\par
+\tab\tab\tab\tab System.out.println(data);\par
+\tab\tab\tab\tab System.out.println(objectname);\par
+\tab\tab\tab\tab System.out.println(runmode);\par
+\tab\tab     String av=\tab key.invalidusername(objectname);\par
+\tab\tab\tab Assert.assertEquals(av, data);\par
+\tab\tab\tab\tab\}\par
+\tab\tab\}\par
+\tab\tab for(int i=0;i<a.size();i++)\{\par
+\tab\tab\tab if(a.get(i).equals("invalidpassword"))\{\par
+\tab\tab\tab\tab String keyword=(String)a.get(i);\par
+\tab\tab\tab\tab String data=(String)a.get(i+1);\par
+\par
+\tab\tab\tab\tab String objectname=(String)a.get(i+2);\par
+\par
+\tab\tab\tab\tab String runmode=(String)a.get(i+3);\par
+\tab\tab\tab\tab System.out.println(keyword);\par
+\tab\tab\tab\tab System.out.println(data);\par
+\tab\tab\tab\tab System.out.println(objectname);\par
+\tab\tab\tab\tab System.out.println(runmode);\par
+\tab\tab     String av=\tab key.invalidpassword(objectname);\par
+\tab\tab\tab Assert.assertEquals(av, data);\par
+\tab\tab\tab\tab\}\par
+\tab\tab\}\par
+\tab\tab for(int i=0;i<a.size();i++)\{\par
+\tab\tab\tab if(a.get(i).equals("clickonlogin"))\{\par
+\tab\tab\tab\tab String keyword=(String)a.get(i);\par
+\tab\tab\tab\tab String data=(String)a.get(i+1);\par
+\par
+\tab\tab\tab\tab String objectname=(String)a.get(i+2);\par
+\par
+\tab\tab\tab\tab String runmode=(String)a.get(i+3);\par
+\tab\tab\tab\tab System.out.println(keyword);\par
+\tab\tab\tab\tab System.out.println(data);\par
+\tab\tab\tab\tab System.out.println(objectname);\par
+\tab\tab\tab\tab System.out.println(runmode);\par
+\tab\tab\tab key.clickonlogin(objectname);\par
+\tab\tab\tab\tab\}\par
+\tab\tab\tab\}\par
+\tab\}\par
+\tab /*for(int i=0;i<a.size();i++)\{\par
+\tab\tab if(a.get(i).equals("input"))\{\par
+\tab\tab\tab String keyword=(String)a.get(i);\par
+\tab\tab\tab String data=(String)a.get(i);\par
+\tab\tab\tab String objectname=(String)a.get(i);\par
+\tab\tab\tab String runmode=(String)a.get(i);\par
+\tab\tab\tab key.input(data, objectname);\par
+\tab\tab\}\par
+\tab\}\par
+\tab for(int i=0;i<a.size();i++)\{\par
+\tab\tab if(a.get(i).equals("input1"))\{\par
+\tab\tab\tab String keyword=(String)a.get(i);\par
+\tab\tab\tab String data=(String)a.get(i);\par
+\par
+\tab\tab\tab String objectname=(String)a.get(i);\par
+\par
+\tab\tab\tab String runmode=(String)a.get(i);\par
+\tab\tab\tab key.input1(data, objectname);\par
+\par
+\tab\tab\}\par
+\tab\}\par
+\tab\tab for(int i=0;i<a.size();i++)\{\par
+\tab\tab\tab if(a.get(i).equals("click"))\{\par
+\tab\tab\tab\tab String keyword=(String)a.get(i);\par
+\tab\tab\tab\tab String data=(String)a.get(i);\par
+\par
+\tab\tab\tab\tab String objectname=(String)a.get(i);\par
+\par
+\tab\tab\tab\tab String runmode=(String)a.get(i);\par
+\tab\tab\tab\tab key.click( objectname);\par
+\par
+\tab\tab\tab\}\par
+\tab\tab\par
+\tab\}\par
+\par
+\tab\tab\}\par
+\par
+\tab\par
+\}\par
+\}*/\par
+\}\par
+}
+ 
